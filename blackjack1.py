@@ -18,7 +18,7 @@ q_table = defaultdict(lambda: np.zeros(env.action_space.n))
 
 wins = 0 #-> Contagem de vitórias
 
-for episodio in range(100000000):
+for episodio in range(100000):
 
     state, info = env.reset()
     done = False
@@ -57,7 +57,7 @@ for episodio in range(100000000):
     epsilon = max(epsilon_min, epsilon * epsilon_decay)
 
 print(f"Vitórias: {wins}")
-print(f"Taxa de vitória: {wins/100000000*100:.2f}%")
+print(f"Taxa de vitória: {wins/100000*100:.2f}%")
 
 
 with open("blackjack_qtable.pkl", "wb") as treinoBlackJack:
